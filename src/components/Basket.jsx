@@ -5,7 +5,7 @@ export default function Basket(props) {
   const itemsPrice = cartItems.reduce((a, c) => a + c.qty * c.price, 0);
   const totalPrice = itemsPrice;
   return (
-    <aside className="block col-1">
+    <aside className="block col-2">
       <h2>Pedidos</h2>
       <div>
         {cartItems.length === 0 && <div>Nenhum produto adicionado</div>}
