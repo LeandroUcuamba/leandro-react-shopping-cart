@@ -6,9 +6,9 @@ export default function Product(props) {
     <div>
       <img className="small" src={product.image} alt={product.name} />
       <h3>{product.name}</h3>
-      <div>${product.price}</div>
+      <div>{product.price}Kz</div>
       <div>
-        <button onClick={() => onAdd(product)}>Add To Cart</button>
+        <button onClick={() => onAdd(product)} id='btn-add-product'>Adicionar</button>
       </div>
     </div>
   );

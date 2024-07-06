@@ -50,15 +50,35 @@ button {
   border-radius: 0.5rem;
   border: 0.1rem #404040 solid;
   background-color: #f0c040;
+  width: 30%;
+  cursor: pointer;
+}
+button:hover {
+  font-size: 0.9rem;
+  padding: 0.2rem;
+  margin: 0.1rem;
+  border-radius: 0.5rem;
+  border: 0.1rem #404040 solid;
+  background-color: #bfed92;
+  width: 30%;
+  cursor: pointer;
+}
+#btn-solicitar{
+  font-size: 1rem;
+  padding: 0.2rem;
+  margin: 0.1rem;
+  border-radius: 0.5rem;
+  border: 0.1rem #404040 solid;
+  background-color: #74e135;
   width: 100%;
   cursor: pointer;
 }
 button.add {
-  background-color: #40c0f0;
+  background-color: #f0c040;
   width: 1.5rem;
 }
 button.remove {
-  background-color: #f04040;
+  background-color: #f0c040;
   width: 1.5rem;
 }
 button.badge {
@@ -66,4 +86,13 @@ button.badge {
   border: none;
   color: #ffffff;
   width: 1.5rem;
+}
+#btn-add-product{
+  margin: 0.3rem 0 1rem 0;
+}
+
+@media (max-width: 768px) {
+  .row {
+    flex-direction: column;
+  }
 }

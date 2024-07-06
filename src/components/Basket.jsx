@@ -6,9 +6,9 @@ export default function Basket(props) {
   const totalPrice = itemsPrice;
   return (
     <aside className="block col-1">
-      <h2>Cart Items</h2>
+      <h2>Pedidos</h2>
       <div>
-        {cartItems.length === 0 && <div>Cart is empty</div>}
+        {cartItems.length === 0 && <div>Nenhum produto adicionado</div>}
         {cartItems.map((item) => (
           <div key={item.id} className="row">
             <div className="col-2">{item.name}</div>
@@ -22,7 +22,7 @@ export default function Basket(props) {
             </div>
 
             <div className="col-2 text-right">
-              {item.qty} x ${item.price.toFixed(2)}
+              {item.qty} x {item.price.toFixed(2)}Kz
             </div>
           </div>
         ))}
@@ -30,23 +30,19 @@ export default function Basket(props) {
         {cartItems.length !== 0 && (
           <>
             <hr></hr>
-            <div className="row">
-              <div className="col-2">Items Price</div>
-              <div className="col-1 text-right">${itemsPrice.toFixed(2)}</div>
-            </div>
 
             <div className="row">
               <div className="col-2">
-                <strong>Total Price</strong>
+                <strong>Preço Total</strong>
               </div>
               <div className="col-1 text-right">
-                <strong>${totalPrice.toFixed(2)}</strong>
+                <strong>{totalPrice.toFixed(2)}Kz</strong>
               </div>
             </div>
             <hr />
             <div className="row">
-              <button onClick={() => alert('Implement Checkout!')}>
-                Checkout
+              <button onClick={() => alert('Implement Checkout!')} id='btn-solicitar'>
+                Solicitar Pedido
               </button>
             </div>
           </>
