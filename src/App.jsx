@@ -1,12 +1,26 @@
+import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
 import Main from './components/Main';
 import Basket from './components/Basket';
-import database from './database';
-import { useState } from 'react';
 
 function App() {
-  const { products } = database;
+  const [products, setProducts] = useState([]);
   const [cartItems, setCartItems] = useState([]);
+
+  useEffect(() => {
+    fetch('http://localhost:3000/products', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+    .then((resp) => resp.json())
+    .then((data) => {
+      setProducts(data)
+    })
+    .catch((err) => console.log(err))
+  }, []);
+
   const onAdd = (product) => {
     const exist = cartItems.find((x) => x.id === product.id);
     if (exist) {
@@ -19,6 +33,7 @@ function App() {
       setCartItems([...cartItems, { ...product, qty: 1 }]);
     }
   };
+
   const onRemove = (product) => {
     const exist = cartItems.find((x) => x.id === product.id);
     if (exist.qty === 1) {
@@ -31,16 +46,17 @@ function App() {
       );
     }
   };
+
   return (
     <div className="App">
-      <Header countCartItems={cartItems.length}></Header>
+      <Header countCartItems={cartItems.length} />
       <div className="row">
-        <Main products={products} onAdd={onAdd}></Main>
+        <Main products={products} onAdd={onAdd} />
         <Basket
           cartItems={cartItems}
           onAdd={onAdd}
           onRemove={onRemove}
-        ></Basket>
+        />
       </div>
     </div>
   );
