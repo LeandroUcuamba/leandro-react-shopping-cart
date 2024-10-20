@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import Header from './components/Header';
-import Main from './components/Main';
-import Basket from './components/Basket';
+import Header from './components/component_cart/Header';
+import Main from './components/component_cart/Main';
+import Basket from './components/component_cart/Basket';
 
 function App() {
   const [products, setProducts] = useState([]);

@@ -1,8 +1,8 @@
 import React, { useRef } from 'react';
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
-import logoImg from './asset/logo.png';
-import carimboImg from './asset/carimbo.png';
+import logoImg from '../asset/logo.png';
+import carimboImg from '../asset/carimbo.png';
 
 export default function Basket(props) {
   const { cartItems, onAdd, onRemove } = props;
